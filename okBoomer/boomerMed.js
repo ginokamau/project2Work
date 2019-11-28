@@ -1,9 +1,13 @@
 // BoomerSandwichApp JavaScript
-
+// code to read and set any environment variables with the dotenv package
+require("dotenv").config();
+// code required to import the key.js file and store it in a variable
+var keys = require("../keys.js");
+// access keys information
 //	Variables
-var googleMapApiKey = "AIzaSyD5fVIBa-2HNOA0W4Mii2F36eYCjT6p8Tw";
-var yelpApiKey = "FwKfl6K6MbtntrK262jzahFGE8n2ocOj3d4TKpUH5QRmw4dCYQuINYYgOJd17q0-m3OTF-51QhggNTabSGjOnKUGS_sbeUYcIDD_f_gHUnkWYpCnti7pD9U_wDLcXXYx";
-var recipesApiKey = "74fb628d";
+var googleMapsApiKey;
+var yelpApiKey;
+var recipesApiKey;
 var service;
 var zipCode = 0;
 var serviceType = "";
@@ -23,7 +27,7 @@ function getBusinessCoord(){
     var latitude = 41.5084;
     var longitude = -81.6076;
     var businessRadius = 8000;
-    var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius="+businessRadius+"&keyword="+searchThis+"&type="+serviceType+"&key="+googleMapApiKey;
+    var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius="+businessRadius+"&keyword="+searchThis+"&type="+serviceType+"&key="+googleMapsApiKey;
     $.ajax({
         url: queryURL,
         method: "GET",
