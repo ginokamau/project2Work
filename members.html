@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>BoomerSandwich</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="assets/stylesheets/style.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+
+<body class="container">
+  <div class="navbar btn-toolbar btn-group">
+    <div class="navbar-inner">
+      <ul class="nav nav-pills nav-stacked">
+        <a href="/signup" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Sign
+          Up</a>
+        <a href="/login" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Login</a>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="jumbotron text-center">
+    <h1>Boomer Sandwich</h1>
+    <hr>
+    <p>Here we are, like the trees in autumn, stuck between summer and winter, full grown, well rooted, and about to
+      peak in color.
+    </p>
+    <p> We take care of the wild nature and riotous growth of summer in our children.
+    </p>
+    <p>We fear the path forward, fallen leaves, broken branches, ice storms, all seen in the face of our aging parents.
+    </p>
+    <p>
+      Once the Baby Boomers, we are now the fall generation and everything falls on us.
+    </p>
+  </div>
+
+  <div>
+    <section>
+      <div class="col sqs-col-8 span-8">
+        <div class="sqs-block html-block sqs-block-html" data-block-type="2" id="">
+          <div class="sqs-block-content">
+            <h1 class="leafbar" style="text-align:center;white-space:pre-wrap;">
+              Hey Boomer Sandwich people!
+              Use a little help. Explore our website to find the resources you need.
+            </h1>
+          </div>
+        </div>
+      </div>
+      <!-- <h2 class="leafbar"></h2>        -->
+    </section>
+    <hr>
+
+
+<!-- =================================================================================== -->
+    <!-- Gino and Maria API modals and links -->
+    <!-- Middle Section -->
+    <section>
+      <div class="row">
+
+        <!-- Medical services link to modal -->
+        <div class="col-sm-4">
+          <h3>Where's that office?</h3>
+          <p>Search <a href="#bannerformmodal" data-toggle="modal" data-target="#bannerformmodal">here</a> for a doctor,
+            dentist or drugstore near you.</p>
+
+          <!-- Medical services modal selection and zipCode input -->
+          <div id="servicesModal">
+            <div class="modal fade bannerformmodal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true" id="bannerformmodal">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+                      <h3 class="modal-title" id="myModalLabel">Find a Service</h3>
+                      <button type="button" class="close" id='closer1' data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body"> 
+                      <h5>Enter your zip code.</h5>                     
+                      <div class="input-group input-group-lg">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="">
+                              <input type="text" name="zipCode" id="zip" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">Search by Zip Code</span>
+                          </div>
+                      </div>
+                      <h5>What kind of specialist are you seeking? Make your selection below.</h5><br>
+                      <div id="serviceSpecialist">
+                          <button type="button" class="specialist btn btn-danger btn-block btn-lg" id="doctor" value="Doctor">Doctor</button><br>
+                          <button type="button" class="specialist btn btn-primary btn-block btn-lg" id="dentist" value="Dentist">Dentist</button><br>
+                          <button type="button" class="specialist btn btn-success btn-block btn-lg" id="drugstore" value="Drugstore">Drugstore</button>
+                      </div><br>
+
+
+                    </div>
+                    <div class="modal-footer">                      
+                    <!-- append result data to modal -->                  
+                      <div class="servicesResults"></div>
+                      
+
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>    
+
+        <!-- Recipe suggestion link to modal -->
+        <div class="col-sm-4">
+          <h3>What can I cook tonight?</h3>
+          <p>Follow this <a href="#bannerformmodal1" data-toggle="modal" data-target="#bannerformmodal1">link</a> to find
+            recipes made with ingredients you have on hand.</p>
+
+          <!-- Recipe modal with ingredient inputs -->
+            <div id="recipesModal">
+              <div class="modal fade bannerformmodal1" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal1" aria-hidden="true" id="bannerformmodal1">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Find a Recipe</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      </div>
+                      <div class="modal-body">
+                        <form id="requestacallform" method="POST" name="requestacallform">          
+                          <div class="form-group">
+                            <div class="input-group">                               
+                              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                              <input id="ingredient1" type="text" class="form-control" placeholder="First ingredient" name="ingredient1" value="ingredient1"/>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group">                               
+                              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                              <input id="ingredient2" type="text" class="form-control" placeholder="Second ingredient" name="ingredient2" value="ingredient2"/>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="input-group">                               
+                              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                              <input id="ingredient3" type="text" class="form-control" placeholder="Third ingredient" name="ingredient3" value="ingredient3"/>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-lg">Submit</button>
+                      </div>          
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+        <!-- Ailment diagnosis link to modal -->
+        <div class="col-sm-4">
+          <h3>What's wrong with me?</h3>
+          <p>Go <a href="#bannerformodal2" data-toggle="modal" data-target="#bannerformmodal2">here</a>, type in your symptons and find out what may be ailing you.</p>    
+
+          <!-- Ailment diagnosis modal with symptom inputs -->
+          <div id="ailmentModal">
+            <div class="modal fade bannerformmodal2" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true" id="bannerformmodal2">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-content">
+                    <div class="modal-header">                      
+                      <h4 class="modal-title" id="myModalLabel">Find your Diagnosis</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="requestacallform" method="POST" name="requestacallform">          
+                        <div class="form-group">
+                          <div class="input-group">                               
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input id="ingredient1" type="text" class="form-control" placeholder="Symptom 1" name="symptom1" value="symptom1"/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group">                               
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input id="ingredient2" type="text" class="form-control" placeholder="Symptom 2" name="symptom2" value="symptom2"/>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group">                               
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input id="ingredient3" type="text" class="form-control" placeholder="Symptom 3" name="symptom3" value="symptom3"/>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary btn-lg">Submit</button>
+                    </div>         
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+<!-- =================================================================================== -->  
+    <!-- Lower Section -->
+    <section>
+      <h2 class="leafbar">Find Other Useful Resources Below </h2>
+    
+
+    <!-- <div class="row">
+    <div class="col-2 "><img class="img-thumbnail img-fluid" src="./assets/images/leaf200X200.jpg" alt="">
+    </div>
+    <div class="col-2 "><img class=" img-thumbnail img-fluid" src="./assets/images/leaf200X200.jpg" alt="">
+    </div>
+    <div class="col-2 "><img class="img-thumbnail img-fluid" src="./assets/images/leaf200X200.jpg" alt="">
+    </div>
+    <div class="col-2 "><img class="img-thumbnail img-fluid" src="./assets/images/leaf200X200.jpg" alt="">
+    </div>
+    <div class="col-2 "><img class="img-thumbnail img-fluid" src="./assets/images/leaf200X200.jpg" alt="">
+    </div>
+    <div class="col-2 "><img class="img-thumbnail img-fluid" src="./assets/images/leaf200X200.jpg" alt="">
+    </div>
+  </div> -->
+
+
+    <div class="row">
+      <div class="card-deck">
+
+      <!-- <div class="col-sm-3"> -->
+        <div class="card">
+          <div class="card-body d-flex flex-column">
+            <img class="img-thumbnail img-fluid" src="./assets/images/ronWear.JPG" alt="">
+
+            <p class="card-text">Keeping CHEMOTHERAPY, DIALYSIS & INFUSION Patients Warm, Modest & Comfortable
+                in Cold Treatment Rooms.<br><br>
+                Stylish Apparel with Zippered Openings for Ports</p>
+            <a href="https://www.ronwear.com/" class="btn btn-primary align-self-end mt-auto" target="_blank">Shop now!</a>
+          </div>
+        </div>
+      <!-- </div> -->
+
+      <!-- <div class="col-sm-3"> -->
+        <div class="card">
+          <div class="card-body d-flex flex-column">
+            <img class="img-thumbnail img-fluid" src="./assets/images/hospice.jpg" alt="">
+
+            <p class="card-text">Hospice of the Western Reserve has provided palliative and end-of-life care, caregiver support, and bereavement services throughout Northern Ohio.</p>
+            <a href="https://www.hospicewr.org/" class="btn btn-primary align-self-end mt-auto" target="_blank">Explore now!</a>
+          </div>
+        </div>
+      <!-- </div> -->
+
+      <!-- <div class="col-sm-3"> -->
+        <div class="card">
+          <div class="card-body d-flex flex-column">
+            <img class="img-thumbnail img-fluid" src="./assets/images/eldercarematters-logo.png" alt="">
+
+            <p class="card-text">ElderCareMatters.com is a FREE National Directory of Elder Care / Senior Care Resources for families.</p>
+            <a href="https://eldercarematters.com/" class="btn btn-primary align-self-end mt-auto" target="_blank">Explore now!</a>
+          </div>
+        </div>
+      <!-- </div> -->
+
+      <!-- <div class="col-sm-3"> -->
+        <div class="card">
+          <div class="card-body d-flex flex-column">
+            <img class="img-thumbnail img-fluid" src="./assets/images/nls-loc-logo.jpg" alt="">
+
+            <p class="card-text">The resources listed in this reference guide are designed to assist adults over the age of 55 with disabilities, as well as their caregivers, in handling new physical, psychological, and financial challenges.</p>
+            <a href="https://www.loc.gov/nls/resources/general-resources-on-disabilities/resources-senior-citizens-families/" class="btn btn-primary align-self-end mt-auto" target="_blank">Explore now!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
+</section>
+<script src="./js/members.js"></script>
+
+</body>
+
+</html>
